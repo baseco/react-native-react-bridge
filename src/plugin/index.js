@@ -1,3 +1,4 @@
+import svgTransformer from 'react-native-svg-transformer'
 import metroTransformer from "metro-react-native-babel-transformer";
 import { isEntryFile } from "./babel";
 import { bundle } from "./metro";
@@ -14,5 +15,5 @@ export const transform = async (args) => {
     });
   }
 
-  return metroTransformer.transform(args);
+  return svgTransformer.transform(args);
 };

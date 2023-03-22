@@ -16,7 +16,8 @@
     "prepublishOnly": "rimraf lib && npm run build"
   },
   "dependencies": {
-    "babel-plugin-module-resolver": "4.1.0"
+    "babel-plugin-module-resolver": "4.1.0",
+    "react-native-svg-transformer": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
