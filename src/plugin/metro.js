@@ -18,7 +18,7 @@ export const bundle = async (filename) => {
   const config = await Metro.loadConfig();
   config.resolver.sourceExts = sourceExts;
   config.resolver.assetExts = config.resolver.assetExts.filter(
-    (ext) => !sourceExts.includes(ext)
+    (ext) => ext !== 'svg'
   );
   config.transformer.babelTransformerPath = babelTransformerPath;
 

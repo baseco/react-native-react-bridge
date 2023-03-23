@@ -79,6 +79,7 @@ module.exports.transform = async (args) => {
         src: injectImage(filename, "webp"),
       });
     case ".svg":
+      console.log("Calling custom transformer for SVG...", filename)
       return metroTransformer.transform({
         ...args,
         src: injectImage(filename, "svg+xml"),
