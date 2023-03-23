@@ -5,7 +5,6 @@ export const bundle = async (filename) => {
   const config = await Metro.loadConfig()
   config.transformer.babelTransformerPath = babelTransformerPath;
 
-  console.log("Config from bundler: ", config)
   const { code, map } = await Metro.runBuild(config, {
     entry: filename,
     platform: "rnrb",
