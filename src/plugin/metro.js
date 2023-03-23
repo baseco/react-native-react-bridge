@@ -14,16 +14,17 @@ const sourceExts = [
 
 
 export const bundle = async (filename) => {
-  const { getDefaultConfig } = require('@expo/metro-config')
-  const path = require('path')
+  const config = await Metro.loadConfig();
+  // const { getDefaultConfig } = require('@expo/metro-config')
+  // const path = require('path')
 
-  const workspaceRoot = path.resolve(__dirname, '../..')
-  const projectRoot = __dirname
-  const config = getDefaultConfig(projectRoot)
+  // const workspaceRoot = path.resolve(__dirname, '../..')
+  // const projectRoot = __dirname
+  // const config = getDefaultConfig(projectRoot)
 
-  const watchFolders = [workspaceRoot]
+  // const watchFolders = [workspaceRoot]
 
-  config.resolver.nodeModulesPaths = [path.resolve(projectRoot, 'node_modules')]
+  // config.resolver.nodeModulesPaths = [path.resolve(projectRoot, 'node_modules')]
 
   // config.resolver.sourceExts.push('cjs', 'svg')
   // // config.resolver.sourceExts.push('cjs')
@@ -46,7 +47,7 @@ export const bundle = async (filename) => {
     '@babel/plugin-proposal-numeric-separator',
     '@babel/plugin-transform-literals',
   ]
-  config.watchFolders = watchFolders
+  // config.watchFolders = watchFolders
   config.resolver.sourceExts = sourceExts;
   config.resolver.assetExts = config.resolver.assetExts.filter(
     (ext) => !sourceExts.includes(ext)
