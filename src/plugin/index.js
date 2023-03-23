@@ -8,7 +8,7 @@ export const transform = async (args) => {
   const { filename, src, options } = args;
   const isEntry = isEntryFile(src, filename);
   if (isEntry) {
-    console.log("Calling custom transformer...", args)
+    console.log("Calling custom transformer...", filename)
     const res = await bundle(filename);
     return metroTransformer.transform({
       ...args,
@@ -16,6 +16,6 @@ export const transform = async (args) => {
     });
   }
 
-  console.log("Calling svgTransformer...", args)
+  console.log("Calling svgTransformer...", filename)
   return svgTransformer.transform(args);
 };
